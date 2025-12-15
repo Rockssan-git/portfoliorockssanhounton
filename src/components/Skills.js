@@ -1,61 +1,58 @@
 export default function Skills() {
-    // Informations tirées directement du CV (Fusion 360, C++, Python, Hacking...)
-    const skills = [
-      { 
-        category: "Ingénierie & Conception 3D", 
-        description: "Modélisation et simulation de pièces complexes.",
-        tools: "Fusion 360, AutoCAD", 
-      },
-      { 
-        category: "Développement Logiciel", 
-        description: "Programmation système et web.",
-        tools: "C, C++, Python, Next.js", 
-      },
-      { 
-        category: "Cybersécurité", 
-        description: "Analyse de vulnérabilités et protection.",
-        tools: "Hacking éthique, Kali Linux", 
-      },
-      { 
-        category: "Data & IA", 
-        description: "Automatisation et traitement de données.",
-        tools: "Python, Analyse de données", 
-      },
-    ];
-  
-    return (
-      <section id="skills" className="py-24 px-4 max-w-screen-xl mx-auto">
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold text-white mb-4">Mes Compétences Techniques</h3>
-          <p className="text-slate-400 max-w-2xl mx-auto">
-            Un aperçu de mon bagage technique acquis durant ma formation universitaire et mes projets personnels.
-          </p>
-        </div>
-        
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {skills.map((skill, index) => (
-            // Carte professionnelle sobre
-            <div key={index} className="bg-[#0a140d] border border-green-900/30 p-8 rounded-xl hover:border-green-500/40 hover:shadow-lg transition-all duration-300 group">
-              
-              <h4 className="text-lg font-semibold text-white mb-2 group-hover:text-green-400 transition-colors">
-                {skill.category}
-              </h4>
-              
-              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
-                {skill.description}
-              </p>
-              
-              <div className="pt-4 border-t border-green-900/30">
-                <p className="text-xs font-bold text-green-500 uppercase tracking-wide mb-1">
-                  Outils maîtrisés
-                </p>
-                <p className="text-slate-300 text-sm font-medium">
-                  {skill.tools}
-                </p>
-              </div>
+  return (
+    <section id="competences" className="scroll-mt-36 spotlight-card rounded-2xl p-6 backdrop-blur-md">
+      <div className="card-content">
+          <h3 className="text-lg font-bold text-white mb-6 border-b border-[#00ff00]/30 pb-2 flex items-center gap-2">
+             <span className="text-[#00ff00]">🛠️</span> Arsenal Technique
+          </h3>
+          
+          <div className="space-y-6">
+            
+            {/* GROUPE 1 : AÉRONAUTIQUE & INGÉNIERIE (Mis en avant) */}
+            <div>
+               <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-bold text-[#00ff00] uppercase tracking-wider">Conception & Ingénierie</span>
+                  <span className="text-[10px] text-black bg-[#00ff00] px-2 rounded font-bold">Cœur de métier</span>
+               </div>
+               <div className="flex flex-wrap gap-2">
+                  {['Fusion 360 (CAO)', 'AutoCAD', 'Simulation Numérique', 'Mathématiques', 'Physique Mécanique'].map(s => (
+                     <span key={s} className="px-2 py-1 bg-[#050a05] border border-[#00ff00]/40 text-xs text-white rounded hover:bg-[#00ff00] hover:text-black transition-all cursor-default shadow-[0_0_5px_rgba(0,255,51,0.1)]">
+                        {s}
+                     </span>
+                  ))}
+               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    );
+
+            {/* GROUPE 2 : INFORMATIQUE (Outils au service de l'ingénierie) */}
+            <div>
+               <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-bold text-[#00ff00] uppercase tracking-wider">Programmation & Outils</span>
+                  <span className="text-[10px] text-slate-500 bg-slate-900 px-2 rounded border border-slate-800">Compétences Transverses</span>
+               </div>
+               <div className="flex flex-wrap gap-2">
+                  {['C / C++', 'Python (Data/Calcul)', 'Algorithmique', 'GitHub', 'Next.js', 'Excel Avancé'].map(s => (
+                     <span key={s} className="px-2 py-1 bg-[#050a05] border border-[#00ff00]/20 text-xs text-slate-300 rounded hover:border-[#00ff00] hover:text-white transition-all cursor-default">
+                        {s}
+                     </span>
+                  ))}
+               </div>
+            </div>
+
+            {/* GROUPE 3 : AUTRES */}
+            <div>
+               <div className="flex justify-between items-center mb-2">
+                  <span className="text-xs font-bold text-[#00ff00] uppercase tracking-wider">Sécurité & Système</span>
+               </div>
+               <div className="flex flex-wrap gap-2">
+                  {['Architecture OS', 'Sécurité Informatique', 'Kali Linux'].map(s => (
+                     <span key={s} className="px-2 py-1 bg-[#050a05] border border-[#00ff00]/20 text-xs text-slate-400 rounded hover:border-[#00ff00] hover:text-white transition-all cursor-default">
+                        {s}
+                     </span>
+                  ))}
+               </div>
+            </div>
+          </div>
+      </div>
+    </section>
+  );
 }
