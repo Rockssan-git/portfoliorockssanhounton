@@ -7,7 +7,7 @@ export default function About() {
             {/* PARTIE 1 : BIO SYNTHÉTIQUE (Basée sur le CV) */}
             <div className="grid md:grid-cols-3 gap-8 items-start border-b border-[#00ff00]/20 pb-8">
                 <div className="md:col-span-2 space-y-4">
-                   <h2 className="text-2xl font-bold text-white flex items-center gap-2">
+                   <h2 className="text-2xl font-bold text-[var(--text-primary)] flex items-center gap-2">
                       <span className="text-[#00ff00]">✈️</span> Profil & Ambition
                    </h2>
                    <p className="text-slate-300 leading-relaxed text-sm">
@@ -26,7 +26,7 @@ export default function About() {
                 {/* Petit bloc "Soft Skills" du CV */}
                 <div className="bg-[#00ff00]/5 p-4 rounded-lg border border-[#00ff00]/10">
                     <h3 className="text-[#00ff00] font-bold text-sm mb-3 uppercase tracking-wider">Atouts</h3>
-                    <ul className="space-y-2 text-xs text-slate-400">
+                    <ul className="space-y-2 text-xs text-[var(--text-secondary)]">
                         <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Curiosité Scientifique</li>
                         <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Adaptabilité</li>
                         <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Compétitivité</li>
@@ -37,10 +37,10 @@ export default function About() {
 
             {/* PARTIE 2 : TA PHILOSOPHIE (Le texte que tu as fourni) */}
             <div className="space-y-4">
-               <h2 className="text-xl font-bold text-white flex items-center gap-2">
+               <h2 className="text-xl font-bold text-[var(--text-primary)] flex items-center gap-2">
                   <span className="text-[#00ff00]">💡</span> Ma Vision de l'Innovation
                </h2>
-               <div className="text-slate-400 text-sm leading-relaxed space-y-4 text-justify italic border-l-2 border-[#00ff00] pl-6">
+               <div className="text-[var(--text-secondary)] text-sm leading-relaxed space-y-4 text-justify italic border-l-2 border-[#00ff00] pl-6">
                   <p>
                     "Courir derrière l’invention est souvent une course vaine vers l’inconnu, alors que l’innovation est une quête consciente vers la perfection. L’invention cherche à créer ce qui n’existe pas encore ; l’innovation, elle, révèle le potentiel caché de ce qui existe déjà."
                   </p>

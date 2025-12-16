@@ -11,11 +11,11 @@ export default function Timeline() {
           <div key={index} className="relative pl-6 group">
             <span className="absolute -left-[5px] top-1.5 h-2 w-2 rounded-full bg-green-600 ring-4 ring-[#020a05] group-hover:bg-green-400 transition-all"></span>
             <div className="flex flex-col items-start mb-1">
-              <h3 className="text-sm font-bold text-white group-hover:text-green-400 transition-colors">{item.title}</h3>
+              <h3 className="text-sm font-bold text-[var(--text-primary)] group-hover:text-green-400 transition-colors">{item.title}</h3>
               <span className="text-[10px] font-mono text-green-500 bg-green-900/20 px-1 rounded border border-green-900/30 mt-1">{item.date}</span>
             </div>
             <p className="text-xs text-slate-300 mb-1">{item.place}</p>
-            <p className="text-slate-400 text-xs leading-relaxed">{item.description}</p>
+            <p className="text-[var(--text-secondary)] text-xs leading-relaxed">{item.description}</p>
           </div>
         ))}
       </div>
