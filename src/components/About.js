@@ -1,62 +1,99 @@
 export default function About() {
   return (
     <section id="apropos" className="scroll-mt-36">
-      <div className="spotlight-card rounded-2xl p-8 backdrop-blur-sm border border-[#00ff00]/20">
-         <div className="card-content space-y-8">
-            
-            {/* PARTIE 1 : BIO SYNTHÉTIQUE (Basée sur le CV) */}
-            <div className="grid md:grid-cols-3 gap-8 items-start border-b border-[#00ff00]/20 pb-8">
-                <div className="md:col-span-2 space-y-4">
-                   <h2 className="text-2xl font-bold text-[var(--text-primary)] flex items-center gap-2">
-                      <span className="text-[#00ff00]">✈️</span> Profil & Ambition
-                   </h2>
-                   <p className="text-slate-300 leading-relaxed text-sm">
-                      Actuellement étudiant en <strong>1ère année de Licence Sciences pour l'Ingénieur</strong> à l'Université de Bordeaux, je construis mon parcours autour d'une double compétence : l'ingénierie mécanique et les technologies numériques.
-                   </p>
-                   <p className="text-slate-300 leading-relaxed text-sm">
-                      Fort d'une maîtrise des outils de <strong>CAO (Fusion 360, AutoCAD)</strong> et de bases solides en programmation (C, C++, Python), je cherche à appliquer cette polyvalence technique dans le secteur aérospatial. Proactif et curieux, je suis à la recherche d'un <strong>stage ouvrier</strong> pour appréhender concrètement les réalités de production industrielle.
-                   </p>
-                   <div className="flex flex-wrap gap-3 pt-2">
-                      <span className="px-3 py-1 rounded-full bg-[#00ff00]/10 text-[#00ff00] text-xs border border-[#00ff00]/30">Licence SPI (En cours)</span>
-                      <span className="px-3 py-1 rounded-full bg-[#00ff00]/10 text-[#00ff00] text-xs border border-[#00ff00]/30">BAC S (Maths/Physique)</span>
-                      <span className="px-3 py-1 rounded-full bg-[#00ff00]/10 text-[#00ff00] text-xs border border-[#00ff00]/30">Trilingue (FR/EN/Fon)</span>
-                   </div>
-                </div>
-                
-                {/* Petit bloc "Soft Skills" du CV */}
-                <div className="bg-[#00ff00]/5 p-4 rounded-lg border border-[#00ff00]/10">
-                    <h3 className="text-[#00ff00] font-bold text-sm mb-3 uppercase tracking-wider">Atouts</h3>
-                    <ul className="space-y-2 text-xs text-[var(--text-secondary)]">
-                        <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Curiosité Scientifique</li>
-                        <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Adaptabilité</li>
-                        <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Compétitivité</li>
-                        <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 bg-[#00ff00] rounded-full"></span>Rigueur (Maths/Physique)</li>
-                    </ul>
-                </div>
-            </div>
+      
+      <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+        
+        {/* --- 1. LE CADRE OCTOGONAL NÉON (Taille Réduite & Style Réaliste) --- */}
+        <div className="w-full md:w-1/3 flex justify-center sticky top-24 pb-8 md:pb-0">
+           
+           {/* TAILLE RÉDUITE : w-60 h-60 (avant c'était w-72 h-72) */}
+           <div className="relative w-60 h-60 group">
 
-            {/* PARTIE 2 : TA PHILOSOPHIE (Le texte que tu as fourni) */}
-            <div className="space-y-4">
-               <h2 className="text-xl font-bold text-[var(--text-primary)] flex items-center gap-2">
-                  <span className="text-[#00ff00]">💡</span> Ma Vision de l'Innovation
-               </h2>
-               <div className="text-[var(--text-secondary)] text-sm leading-relaxed space-y-4 text-justify italic border-l-2 border-[#00ff00] pl-6">
-                  <p>
-                    "Courir derrière l’invention est souvent une course vaine vers l’inconnu, alors que l’innovation est une quête consciente vers la perfection. L’invention cherche à créer ce qui n’existe pas encore ; l’innovation, elle, révèle le potentiel caché de ce qui existe déjà."
-                  </p>
-                  <p>
-                    "J’ai toujours cru que la véritable intelligence ne réside pas dans la volonté de tout réinventer, mais dans la capacité d’extraire du réel son plus haut degré d’efficacité, de beauté et d’harmonie. C’est dans cet esprit que je porte un regard exigeant sur les domaines où la perfection semble déjà acquise : <strong>l’aéronautique et le spatial</strong>."
-                  </p>
-                  <p>
-                    "Mon ambition est claire : contribuer à la recherche et à l’innovation pour rendre l’aéronautique et le spatial toujours plus efficients, plus responsables, et pour rendre le transport aérien plus sûr."
-                  </p>
-                  <p>
-                     "Partager, apprendre et construire ensemble sont pour moi les véritables moteurs du progrès car chaque rencontre peut être le point de départ d’une innovation qui transforme le ciel."
-                  </p>
-               </div>
-            </div>
+              <style jsx>{`
+                /* Forme Octogonale */
+                .octagon-shape {
+                    clip-path: polygon(29.3% 0%, 70.7% 0%, 100% 29.3%, 100% 70.7%, 70.7% 100%, 29.3% 100%, 0% 70.7%, 0% 29.3%);
+                }
 
-         </div>
+                /* 1. L'Aura Lumineuse (Glow) - Derrière */
+                .neon-glow {
+                    position: absolute;
+                    inset: -5px;
+                    background: conic-gradient(from 0deg, #00CCFF, #00ffea, #00CCFF, #0077ff, #00CCFF);
+                    filter: blur(20px);
+                    opacity: 0.5;
+                    transition: opacity 0.3s ease;
+                    z-index: 0;
+                }
+                .group:hover .neon-glow {
+                    opacity: 0.8; /* S'illumine plus fort au survol */
+                    filter: blur(25px);
+                }
+
+                /* 2. Le Tube Néon (Bordure) - Dégradé subtil */
+                .neon-border {
+                    position: absolute;
+                    inset: 0;
+                    /* Variation légère des couleurs pour l'effet "Tube" 3D */
+                    background: linear-gradient(135deg, #00CCFF 0%, #E0FFFF 50%, #00CCFF 100%);
+                    z-index: 1;
+                }
+
+                /* 3. Le Masque Intérieur (Noir) pour créer l'épaisseur du tube */
+                .image-container {
+                    position: absolute;
+                    inset: 3px; /* Épaisseur du tube néon (3px) */
+                    background: #000;
+                    z-index: 2;
+                }
+              `}</style>
+
+              {/* COUCHE 1 : La lumière diffuse (Glow) */}
+              <div className="neon-glow octagon-shape animate-pulse-slow"></div>
+
+              {/* COUCHE 2 : Le tube physique (Bordure) */}
+              <div className="neon-border octagon-shape"></div>
+
+              {/* COUCHE 3 : L'image */}
+              <div className="image-container octagon-shape">
+                   <img 
+                     src="/images/profile.jpeg" 
+                     alt="Rockssan Hounton" 
+                     className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                   />
+              </div>
+
+           </div>
+        </div>
+
+        {/* --- 2. L'AUTOBIOGRAPHIE (Texte Justifié) --- */}
+        <div className="w-full md:w-2/3 space-y-6 text-justify text-[var(--text-secondary)] leading-relaxed">
+           <p>
+              <span className="text-[#00CCFF] font-medium italic">
+              « Courir derrière l’invention est souvent une course vaine vers l’inconnu, alors que l’innovation est une quête consciente vers la perfection ».
+              </span>
+              {" "}Ainsi se forge ma pensée sur le sens véritable de l’innovation.
+           </p>
+           <p>
+              L’invention cherche à créer ce qui n’existe pas encore ; l’innovation, elle, révèle le potentiel caché de ce qui existe déjà. L’une naît souvent du hasard, l’autre exige la rigueur, l’observation et la compréhension profonde des limites actuelles pour les transcender. J’ai toujours cru que la véritable intelligence ne réside pas dans la volonté de tout réinventer, mais dans la capacité d’extraire du réel son plus haut degré d’efficacité, de beauté et d’harmonie. Car rien, même dans nos plus grandes avancées technologiques, n’est jamais achevé. Tout reste perfectible ; et c’est dans cette zone subtile entre l’existant et le possible que s’écrit le vrai progrès.
+           </p>
+           <p>
+              C’est dans cet esprit que je porte un regard exigeant sur les domaines où la perfection semble déjà acquise, mais où tant de défis demeurent encore à relever : l’aéronautique et le spatial.
+           </p>
+           <p>
+              L’aéronautique et le spatial incarnent pour moi ce défi permanent : concilier performance, sécurité, et durabilité dans un environnement où chaque gramme, chaque degré, chaque décibel compte. Ce sont des domaines fascinants mais encore confrontés à des enjeux cruciaux : consommation énergétique élevée, empreinte carbone, bruit, fatigue des matériaux, turbulence atmosphérique, fiabilité des systèmes embarqués ou encore coûts d’exploitation et maintenance.
+           </p>
+           <p>
+              Mon ambition est claire : contribuer à la recherche et à l’innovation pour rendre l’aéronautique et le spatial toujours plus efficients, plus responsables, et pour rendre le transport aérien plus sûr.
+           </p>
+           <p>
+              Je crois profondément que le progrès n’est jamais une aventure solitaire. C’est dans la coopération, la synergie des talents et la curiosité partagée que naissent les vraies révolutions techniques. C’est cette conviction qui guide mon parcours, et qui nourrit ma détermination à évoluer dans ce secteur stratégique du développement mondial.
+           </p>
+           <p>
+              Toujours animé par cette passion, je reste ouvert à toute discussion, collaboration ou échange d’idées autour de ce domaine qui me fascine tant. Partager, apprendre et construire ensemble sont pour moi les véritables moteurs du progrès car chaque rencontre peut être le point de départ d’une innovation qui transforme le ciel.
+           </p>
+        </div>
       </div>
     </section>
   );

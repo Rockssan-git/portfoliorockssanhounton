@@ -1,12 +1,9 @@
 export default function Achievements() {
   return (
     <section id="realisations" className="scroll-mt-36">
-       <h3 className="text-xl font-bold mb-4 flex items-center gap-2" style={{color: 'var(--text-primary)'}}>
-          <span className="text-[#00ff00]">🏆</span> Distinctions
-       </h3>
+       {/* J'ai supprimé le titre H3 ici comme demandé */}
 
-       <div className="bg-[#00ff00]/5 border border-[#00ff00]/20 p-4 rounded-lg flex items-center gap-4 hover:bg-[#00ff00]/10 hover:border-[#00ff00]/50 transition-all group">
-          
+       <div className="bg-[#00CCFF]/5 border border-[#00CCFF]/20 p-4 rounded-lg flex items-center gap-4 hover:bg-[#00CCFF]/10 hover:border-[#00CCFF]/50 transition-all group">
           <div className="text-4xl drop-shadow-[0_0_10px_rgba(192,192,192,0.5)]">
              🥈
           </div>
@@ -17,25 +14,24 @@ export default function Achievements() {
                     href="https://www.nuitdelinfo.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="font-bold transition-colors hover:text-[#00ff00] hover:underline"
+                    className="font-bold transition-colors hover:text-[#00CCFF] hover:underline"
                     style={{color: 'var(--text-primary)'}}
                   >
                     Défi "Formulaire augmenté" (NDI 2025)
                   </a>
 
-                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#00ff00] text-black uppercase tracking-wide">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#00CCFF] text-black uppercase tracking-wide">
                      Leader
                   </span>
               </div>
 
-              {/* ICI : LE LIEN DISTRICT 25 PASSE EN NOIR */}
               <p className="text-sm mt-1 text-[var(--text-secondary)]">
                   Médaille d'argent avec le groupe{' '}
                   <a 
                     href="https://rocks-project-frontend.vercel.app" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="font-bold border-b border-[var(--text-secondary)] hover:text-[#00ff00] hover:border-[#00ff00] transition-colors"
+                    className="font-bold border-b border-[var(--text-secondary)] hover:text-[#00CCFF] hover:border-[#00CCFF] transition-colors"
                     style={{color: 'var(--text-secondary)'}}
                   >
                     District 25

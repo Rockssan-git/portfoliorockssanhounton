@@ -23,7 +23,7 @@ export default function Experience() {
   return (
     <section id="experiences" className="scroll-mt-36">
       <h3 className="text-xl font-bold mb-6 flex items-center gap-2" style={{color: 'var(--text-primary)'}}>
-        <span className="text-[#00ff00]">⚡</span> Expériences
+        <span className="text-[#00CCFF]">⚡</span> Expériences
       </h3>
 
       <div className="space-y-6">
@@ -32,8 +32,8 @@ export default function Experience() {
             key={exp.id} 
             className={`relative p-6 rounded-2xl border transition-all duration-300 group
               ${exp.highlight 
-                ? 'bg-[var(--card-bg)] border-[#00ff00] shadow-[0_0_15px_rgba(0,255,0,0.1)]' 
-                : 'bg-[var(--card-bg)] border-[var(--card-border)] hover:border-[#00ff00]/50'
+                ? 'bg-[var(--card-bg)] border-[#00CCFF] shadow-[0_0_15px_rgba(0,204,255,0.1)]' 
+                : 'bg-[var(--card-bg)] border-[var(--card-border)] hover:border-[#00CCFF]/50'
               }`}
           >
             <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 mb-2">
@@ -43,21 +43,20 @@ export default function Experience() {
                 </div>
                 {exp.period && (
                     <span className={`text-xs font-bold px-2 py-1 rounded uppercase tracking-wider ${
-                        exp.highlight ? 'bg-[#00ff00] text-black' : 'bg-[#00ff00]/10 text-[#00ff00] border border-[#00ff00]/30'
+                        exp.highlight ? 'bg-[#00CCFF] text-black' : 'bg-[#00CCFF]/10 text-[#00CCFF] border border-[#00CCFF]/30'
                     }`}>
                         {exp.period}
                     </span>
                 )}
             </div>
 
-            {/* ICI : LE TEXTE PASSE EN NOIR GRÂCE À LA VARIABLE */}
             <p className="text-sm leading-relaxed mb-4 transition-colors duration-500 text-[var(--text-secondary)]">
                 {exp.description}
             </p>
 
             <div className="flex flex-wrap gap-2">
                 {exp.tags.map(tag => (
-                    <span key={tag} className="text-[10px] px-2 py-1 rounded border border-[#00ff00]/20 text-[var(--text-secondary)] bg-[#00ff00]/5">
+                    <span key={tag} className="text-[10px] px-2 py-1 rounded border border-[#00CCFF]/20 text-[var(--text-secondary)] bg-[#00CCFF]/5">
                         {tag}
                     </span>
                 ))}
