@@ -6,7 +6,7 @@ export const translations = {
       skills: 'Compétences',
       projects: 'Projets',
       experience: 'Expériences',
-      education: 'Formation',
+      education: 'Formations',
       distinctions: 'Distinctions',
       contact: 'Contact',
       role: 'Ingénieur Aéro'
@@ -54,14 +54,39 @@ export const translations = {
       }
     },
     education: {
-      title: "Formation",
+      title: "Formations",
+      // FORMATION 1 : BORDEAUX
       edu1: {
-        role: "Licence Sciences pour l'Ingénieur",
+        role: "Licence Sciences pour l'Ingénieur mention mécanique",
         school: "Université de Bordeaux • En cours",
-        desc: "Spécialisation Mécanique & Électronique. Base solide en mathématiques appliquées et physique."
+        desc: ""
+      },
+      // FORMATION 2 : UNSTIM
+      edu2: {
+        role: "Licence 1 Pro Génie Électrique et Informatique mention Informatique et Télécom",
+        school: "Université d'Abomey (UNSTIM) • 2024-2025",
+        desc: ""
       }
     },
     projects: {
+      title: "Projets Réalisés",
+      p1: {
+        title: "District Zone 25",
+        subtitle: "Plateforme communautaire",
+        date: "en développement depuis déc. 2025",
+        desc: "Né de l’effervescence créative de la Nuit de l’Info 2025, District Zone 25 est une plateforme communautaire interactive conçue pour briser les silos entre le grand public et les experts de la technologie. Développée avec React, cette application devient un carrefour d’innovation où étudiants, professionnels et néophytes passionnés convergent. En facilitant le partage de projets novateurs et la confrontation d'idées, District Zone 25 agit comme un catalyseur d'opportunités et de partenariats stratégiques pour les acteurs de l'informatique de demain.",
+        stackTitle: "Stack Technologique",
+        stack: ["React.js", "Supabase", "IA Chatbot", "Vercel", "Tailwind CSS"],
+        featTitle: "Fonctionnalités Phares",
+        features: [
+            "Assistant IA Intégré",
+            "Espace Communautaire Temps Réel",
+            "Architecture Robuste (Supabase)",
+            "Expérience Fluide & Responsive"
+        ],
+        btnDemo: "Accéder à la plateforme",
+        btnRepo: "Accéder au dépôt Github"
+      },
       empty: "Aucun projet public."
     },
     achievements: {
@@ -139,12 +164,35 @@ export const translations = {
     education: {
       title: "Education",
       edu1: {
-        role: "Bachelor of Engineering Sciences",
+        role: "Bachelor of Engineering Sciences, Mechanical Specialization",
         school: "University of Bordeaux • In progress",
-        desc: "Specialization in Mechanics & Electronics. Solid foundation in applied mathematics and physics."
+        desc: ""
+      },
+      edu2: {
+        role: "Professional Bachelor (Year 1) - Electrical & Computer Engineering, CS & Telecoms Specialization",
+        school: "University of Abomey (UNSTIM) • 2024-2025",
+        desc: ""
       }
     },
     projects: {
+      title: "Featured Projects",
+      p1: {
+        title: "District Zone 25",
+        subtitle: "Community Platform",
+        date: "in development since Dec. 2025",
+        desc: "Born from the creative effervescence of the 2025 'Nuit de l'Info', District Zone 25 is an interactive community platform designed to break down silos between the general public and technology experts. Developed with React, this application becomes an innovation hub where students, professionals, and passionate neophytes converge. By facilitating the sharing of innovative projects and the exchange of ideas, District Zone 25 acts as a catalyst for opportunities and strategic partnerships for tomorrow's IT actors.",
+        stackTitle: "Tech Stack",
+        stack: ["React.js", "Supabase", "AI Chatbot", "Vercel", "Tailwind CSS"],
+        featTitle: "Key Features",
+        features: [
+            "Integrated AI Assistant",
+            "Real-time Community Space",
+            "Robust Architecture (Supabase)",
+            "Fluid & Responsive Experience"
+        ],
+        btnDemo: "Access Platform",
+        btnRepo: "Request Code Access"
+      },
       empty: "No public projects."
     },
     achievements: {

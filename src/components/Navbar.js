@@ -22,14 +22,16 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
+  // NOUVEL ORDRE DES ONGLETS
   const tabs = [
     { name: t.nav.home, href: '/' },
     { name: t.nav.about, href: '/about' },
     { name: t.nav.skills, href: '/skills' },
-    { name: t.nav.projects, href: '/projects' },
     { name: t.nav.experience, href: '/experience' },
     { name: t.nav.education, href: '/education' },
     { name: t.nav.distinctions, href: '/distinctions' },
+    // "Projets" a été déplacé ICI (après Distinctions)
+    { name: t.nav.projects, href: '/projects' },
     { name: t.nav.contact, href: '/contact' },
   ];
 
@@ -43,7 +45,6 @@ export default function Navbar() {
               <span className="font-black text-xl text-[#00CCFF] tracking-tighter">RH</span>
            </div>
            <div className="flex flex-col justify-center">
-             {/* NOM MISE À JOUR : HOUNTON EN MAJUSCULE */}
              <span className="text-[var(--text-primary)] font-bold text-lg tracking-wide group-hover:text-[#00CCFF] transition-colors duration-300">
                Rockssan HOUNTON
              </span>
