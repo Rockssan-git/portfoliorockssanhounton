@@ -1,18 +1,17 @@
 'use client'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react'; // <--- J'ai ajouté Suspense ici
 import { useLanguage } from '../context/LanguageContext';
-import { useSearchParams } from 'next/navigation'; // Pour lire l'URL
+import { useSearchParams } from 'next/navigation';
 
-export default function Contact() {
+// 1. On crée un composant interne qui contient la logique "dynamique" (URL)
+function ContactContent() {
   const { t } = useLanguage();
-  const searchParams = useSearchParams(); // On récupère les paramètres
+  const searchParams = useSearchParams(); 
   
-  // On regarde si ?ref=github est dans l'URL
   const isGithubRequest = searchParams.get('ref') === 'github';
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-  // Effet : Si ça vient de GitHub, on pré-remplit le message automatiquement
   useEffect(() => {
     if (isGithubRequest) {
       setFormData(prev => ({
@@ -28,9 +27,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="max-w-xl mx-auto"> {/* J'ai ajouté un container pour centrer */}
+    <div className="max-w-xl mx-auto">
       
-      {/* MESSAGE DE SIGNAL (Optionnel mais classe) */}
+      {/* MESSAGE DE SIGNAL */}
       {isGithubRequest && (
          <div className="mb-6 p-4 bg-[#00CCFF]/10 border border-[#00CCFF]/30 rounded-lg flex items-center gap-3 animate-fadeIn">
             <span className="text-[#00CCFF] text-xl">🔓</span>
@@ -41,11 +40,10 @@ export default function Contact() {
          </div>
       )}
 
-      {/* LE FORMULAIRE AVEC LE SIGNAL LUMINEUX */}
+      {/* FORMULAIRE */}
       <form 
         onSubmit={handleSubmit} 
         className={`space-y-4 transition-all duration-500 rounded-xl p-6 ${
-           // C'EST ICI QUE LA MAGIE OPÈRE :
            isGithubRequest 
              ? 'bg-[#00CCFF]/5 border border-[#00CCFF] shadow-[0_0_30px_rgba(0,204,255,0.15)] scale-[1.02]' 
              : ''
@@ -62,11 +60,11 @@ export default function Contact() {
           <div>
               <label className="text-xs font-bold text-[#00CCFF] uppercase tracking-wider mb-1 block">{t.contact.labelMsg}</label>
               <textarea 
-                rows="6" // Un peu plus grand
+                rows="6"
                 placeholder={t.contact.placeMsg} 
                 className="w-full bg-black/40 border border-[#00CCFF]/20 rounded p-3 text-white focus:border-[#00CCFF] focus:outline-none transition-colors text-sm" 
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
-                value={formData.message} // Important pour le pré-remplissage
+                value={formData.message} 
               ></textarea>
           </div>
 
@@ -80,5 +78,15 @@ export default function Contact() {
           </div>
       </form>
     </div>
+  );
+}
+
+// 2. Le composant Principal exporté ne sert plus qu'à "Envelopper" le contenu dans Suspense
+export default function Contact() {
+  return (
+    // Fallback = ce qu'on affiche pendant le micro-chargement de l'URL (ici rien, juste une div vide)
+    <Suspense fallback={<div className="text-center text-[#00CCFF]">Chargement...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 }
