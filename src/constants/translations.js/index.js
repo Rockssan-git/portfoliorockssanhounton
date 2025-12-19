@@ -1,5 +1,12 @@
+import { projectsData } from './projects';
+
 export const translations = {
   fr: {
+    projects: {
+        title: "Projets Réalisés",
+        ...projectsData.fr
+    },
+
     nav: {
       home: 'Accueil',
       about: 'À propos',
@@ -8,7 +15,7 @@ export const translations = {
       experience: 'Expériences',
       education: 'Formations',
       distinctions: 'Distinctions',
-      contact: 'Contact',
+      contact: 'Contacts', // <--- "s" AJOUTÉ ICI
       role: 'Ingénieur Aéro'
     },
     hero: {
@@ -55,39 +62,16 @@ export const translations = {
     },
     education: {
       title: "Formations",
-      // FORMATION 1 : BORDEAUX
       edu1: {
         role: "Licence Sciences pour l'Ingénieur mention mécanique",
         school: "Université de Bordeaux • En cours",
         desc: ""
       },
-      // FORMATION 2 : UNSTIM
       edu2: {
         role: "Licence 1 Pro Génie Électrique et Informatique mention Informatique et Télécom",
         school: "Université d'Abomey (UNSTIM) • 2024-2025",
         desc: ""
       }
-    },
-    projects: {
-      title: "Projets Réalisés",
-      p1: {
-        title: "District Zone 25",
-        subtitle: "Plateforme communautaire",
-        date: "en développement depuis déc. 2025",
-        desc: "Né de l’effervescence créative de la Nuit de l’Info 2025, District Zone 25 est une plateforme communautaire interactive conçue pour briser les silos entre le grand public et les experts de la technologie. Développée avec React, cette application devient un carrefour d’innovation où étudiants, professionnels et néophytes passionnés convergent. En facilitant le partage de projets novateurs et la confrontation d'idées, District Zone 25 agit comme un catalyseur d'opportunités et de partenariats stratégiques pour les acteurs de l'informatique de demain.",
-        stackTitle: "Stack Technologique",
-        stack: ["React.js", "Supabase", "IA Chatbot", "Vercel", "Tailwind CSS"],
-        featTitle: "Fonctionnalités Phares",
-        features: [
-            "Assistant IA Intégré",
-            "Espace Communautaire Temps Réel",
-            "Architecture Robuste (Supabase)",
-            "Expérience Fluide & Responsive"
-        ],
-        btnDemo: "Accéder à la plateforme",
-        btnRepo: "Accéder au dépôt Github"
-      },
-      empty: "Aucun projet public."
     },
     achievements: {
       title: "Distinctions",
@@ -104,10 +88,18 @@ export const translations = {
       placeEmail: "nom@exemple.com",
       labelMsg: "Transmission (Message)",
       placeMsg: "Initialisation de la communication...",
-      btn: "Envoyer la Requête"
+      btn: "Envoyer la Requête",
+      accessLocked: "Pour des raisons de confidentialité, l'accès au code est sur demande. Remplissez ce formulaire pour recevoir l'accès.",
+      prefillMsg: "Bonjour Rockssan,\n\nJe suis intéressé par le projet {project} et je souhaiterais avoir accès au code source sur GitHub.\n\nCordialement,"
     }
   },
+
   en: {
+    projects: {
+        title: "Featured Projects",
+        ...projectsData.en
+    },
+
     nav: {
       home: 'Home',
       about: 'About',
@@ -116,7 +108,7 @@ export const translations = {
       experience: 'Experience',
       education: 'Education',
       distinctions: 'Awards',
-      contact: 'Contact',
+      contact: 'Contacts', // <--- "s" AJOUTÉ ICI
       role: 'Aero Engineer'
     },
     hero: {
@@ -174,27 +166,6 @@ export const translations = {
         desc: ""
       }
     },
-    projects: {
-      title: "Featured Projects",
-      p1: {
-        title: "District Zone 25",
-        subtitle: "Community Platform",
-        date: "in development since Dec. 2025",
-        desc: "Born from the creative effervescence of the 2025 'Nuit de l'Info', District Zone 25 is an interactive community platform designed to break down silos between the general public and technology experts. Developed with React, this application becomes an innovation hub where students, professionals, and passionate neophytes converge. By facilitating the sharing of innovative projects and the exchange of ideas, District Zone 25 acts as a catalyst for opportunities and strategic partnerships for tomorrow's IT actors.",
-        stackTitle: "Tech Stack",
-        stack: ["React.js", "Supabase", "AI Chatbot", "Vercel", "Tailwind CSS"],
-        featTitle: "Key Features",
-        features: [
-            "Integrated AI Assistant",
-            "Real-time Community Space",
-            "Robust Architecture (Supabase)",
-            "Fluid & Responsive Experience"
-        ],
-        btnDemo: "Access Platform",
-        btnRepo: "Request Code Access"
-      },
-      empty: "No public projects."
-    },
     achievements: {
       title: "Awards",
       card1: {
@@ -210,7 +181,9 @@ export const translations = {
       placeEmail: "name@example.com",
       labelMsg: "Transmission (Message)",
       placeMsg: "Initializing communication...",
-      btn: "Send Request"
+      btn: "Send Request",
+      accessLocked: "For confidentiality reasons, access to code is upon request. Fill out this form to receive access.",
+      prefillMsg: "Hello Rockssan,\n\nI am interested in the {project} project and I would like to request access to the GitHub repository.\n\nBest regards,"
     }
   }
 };

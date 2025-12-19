@@ -1,25 +1,31 @@
 'use client'
-import { useState, useEffect, Suspense } from 'react'; // <--- J'ai ajouté Suspense ici
+import { useState, useEffect, Suspense } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useSearchParams } from 'next/navigation';
 
-// 1. On crée un composant interne qui contient la logique "dynamique" (URL)
 function ContactContent() {
   const { t } = useLanguage();
   const searchParams = useSearchParams(); 
   
-  const isGithubRequest = searchParams.get('ref') === 'github';
+  // Gestion de l'ancien lien 'github' -> 'p1'
+  const rawRef = searchParams.get('ref');
+  const refId = rawRef === 'github' ? 'p1' : rawRef;
+  
+  const isGithubRequest = refId && t.projects[refId];
 
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   useEffect(() => {
     if (isGithubRequest) {
+      const projectTitle = t.projects[refId]?.title || 'Projet';
+      const messageTemplate = t.contact.prefillMsg.replace('{project}', projectTitle);
+
       setFormData(prev => ({
         ...prev,
-        message: "Bonjour Rockssan,\n\nJe suis intéressé par le projet District Zone 25 et je souhaiterais avoir accès au code source sur GitHub.\n\nCordialement,"
+        message: messageTemplate
       }));
     }
-  }, [isGithubRequest]);
+  }, [isGithubRequest, refId, t]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,15 +33,14 @@ function ContactContent() {
   };
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-xl mx-auto w-full">
       
-      {/* MESSAGE DE SIGNAL */}
+      {/* MESSAGE DE SIGNAL (Cadenas) */}
       {isGithubRequest && (
          <div className="mb-6 p-4 bg-[#00CCFF]/10 border border-[#00CCFF]/30 rounded-lg flex items-center gap-3 animate-fadeIn">
-            <span className="text-[#00CCFF] text-xl">🔓</span>
+            <span className="text-[#00CCFF] text-xl">🔒</span>
             <p className="text-sm text-[#00CCFF]">
-               Pour des raisons de confidentialité, l'accès au code est sur demande. <br/>
-               <span className="font-bold">Remplissez ce formulaire pour recevoir l'accès.</span>
+               {t.contact.accessLocked}
             </p>
          </div>
       )}
@@ -46,7 +51,7 @@ function ContactContent() {
         className={`space-y-4 transition-all duration-500 rounded-xl p-6 ${
            isGithubRequest 
              ? 'bg-[#00CCFF]/5 border border-[#00CCFF] shadow-[0_0_30px_rgba(0,204,255,0.15)] scale-[1.02]' 
-             : ''
+             : 'bg-[var(--card-bg)] border border-[var(--card-border)]'
         }`}
       >
           <div>
@@ -73,18 +78,35 @@ function ContactContent() {
           </button>
 
           <div className="flex justify-center gap-6 pt-4 border-t border-[#00CCFF]/20 mt-6">
-              <a href="#" className="text-xs font-bold tracking-widest hover:text-[#00CCFF] transition-colors" style={{color: 'var(--text-secondary)'}}>LINKEDIN</a>
-              <a href="https://github.com/Rockssan-git" target="_blank" className="text-xs font-bold tracking-widest hover:text-[#00CCFF] transition-colors" style={{color: 'var(--text-secondary)'}}>GITHUB</a>
+              {/* LIEN LINKEDIN MIS À JOUR */}
+              <a 
+                href="https://www.linkedin.com/in/rockssanhounton" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs font-bold tracking-widest hover:text-[#00CCFF] transition-colors" 
+                style={{color: 'var(--text-secondary)'}}
+              >
+                LINKEDIN
+              </a>
+
+              {/* LIEN GITHUB MIS À JOUR */}
+              <a 
+                href="https://github.com/Rockssan-git" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-xs font-bold tracking-widest hover:text-[#00CCFF] transition-colors" 
+                style={{color: 'var(--text-secondary)'}}
+              >
+                GITHUB
+              </a>
           </div>
       </form>
     </div>
   );
 }
 
-// 2. Le composant Principal exporté ne sert plus qu'à "Envelopper" le contenu dans Suspense
 export default function Contact() {
   return (
-    // Fallback = ce qu'on affiche pendant le micro-chargement de l'URL (ici rien, juste une div vide)
     <Suspense fallback={<div className="text-center text-[#00CCFF]">Chargement...</div>}>
       <ContactContent />
     </Suspense>
