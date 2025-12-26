@@ -5,46 +5,49 @@ export default function Skills() {
   const { t } = useLanguage();
 
   return (
-    <section id="competences" className="scroll-mt-36 spotlight-card rounded-2xl p-6 backdrop-blur-md transition-colors duration-500">
-      <div className="card-content">
-          <h3 className="text-lg font-bold mb-6 border-b border-[#00CCFF]/30 pb-2 flex items-center gap-2" style={{color: 'var(--text-primary)'}}>
-             <span className="text-[#00CCFF]">🛠️</span> {t.skills.title}
+    <section id="skills" className="scroll-mt-36">
+      
+      {/* GRILLE 2 COLONNES (Hard Skills / Soft Skills) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+        {/* --- COLONNE 1 : HARD SKILLS --- */}
+        <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 hover:border-[#00CCFF]/30 transition-all duration-300">
+          <h3 className="text-xl font-bold text-[#00CCFF] mb-6 flex items-center gap-3 border-b border-[#00CCFF]/20 pb-4">
+            {t.skills.hardSkills.title}
           </h3>
-          
           <div className="space-y-6">
-            <div>
-               <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-bold text-[#00CCFF] uppercase tracking-wider">{t.skills.cat1}</span>
-                  <span className="text-[10px] text-black bg-[#00CCFF] px-2 rounded font-bold">{t.skills.tag1}</span>
-               </div>
-               <div className="flex flex-wrap gap-2">
-                  {['Fusion 360 (CAO)', 'AutoCAD', 'Simulation Numérique', 'Mathématiques', 'Physique Mécanique'].map(s => (
-                     <span key={s} className="px-2 py-1 bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[#00CCFF]/40 text-xs rounded hover:bg-[#00CCFF] hover:text-black transition-all cursor-default shadow-[0_0_5px_rgba(0,204,255,0.1)]">{s}</span>
-                  ))}
-               </div>
-            </div>
-            <div>
-               <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-bold text-[#00CCFF] uppercase tracking-wider">{t.skills.cat2}</span>
-                  <span className="text-[10px] text-[var(--text-secondary)] bg-[var(--badge-bg)] px-2 rounded border border-[var(--card-border)]">{t.skills.tag2}</span>
-               </div>
-               <div className="flex flex-wrap gap-2">
-                  {['C / C++', 'Python (Data/Calcul)', 'Algorithmique', 'GitHub', 'Next.js', 'Excel Avancé'].map(s => (
-                     <span key={s} className="px-2 py-1 bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[#00CCFF]/20 text-xs rounded hover:border-[#00CCFF] transition-all cursor-default">{s}</span>
-                  ))}
-               </div>
-            </div>
-            <div>
-               <div className="flex justify-between items-center mb-2">
-                  <span className="text-xs font-bold text-[#00CCFF] uppercase tracking-wider">{t.skills.cat3}</span>
-               </div>
-               <div className="flex flex-wrap gap-2">
-                  {['Architecture OS', 'Sécurité Informatique', 'Kali Linux'].map(s => (
-                     <span key={s} className="px-2 py-1 bg-[var(--badge-bg)] text-[var(--badge-text)] border border-[#00CCFF]/20 text-xs rounded hover:border-[#00CCFF] transition-all cursor-default">{s}</span>
-                  ))}
-               </div>
-            </div>
+            {t.skills.hardSkills.list.map((skill, index) => (
+              <div key={index} className="group">
+                <h4 className="font-bold text-white text-base mb-1 group-hover:text-[#00CCFF] transition-colors">
+                  {skill.name}
+                </h4>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed text-justify">
+                  {skill.desc}
+                </p>
+              </div>
+            ))}
           </div>
+        </div>
+
+        {/* --- COLONNE 2 : SOFT SKILLS --- */}
+        <div className="bg-[var(--card-bg)] border border-[var(--card-border)] rounded-2xl p-6 hover:border-[#00CCFF]/30 transition-all duration-300">
+          <h3 className="text-xl font-bold text-[#00CCFF] mb-6 flex items-center gap-3 border-b border-[#00CCFF]/20 pb-4">
+            {t.skills.softSkills.title}
+          </h3>
+          <div className="space-y-6">
+            {t.skills.softSkills.list.map((skill, index) => (
+              <div key={index} className="group">
+                <h4 className="font-bold text-white text-base mb-1 group-hover:text-[#00CCFF] transition-colors">
+                  {skill.name}
+                </h4>
+                <p className="text-sm text-[var(--text-secondary)] leading-relaxed text-justify">
+                  {skill.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

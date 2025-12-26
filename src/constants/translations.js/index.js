@@ -1,21 +1,27 @@
 import { projectsData } from './projects';
+import { experienceData } from './experience';
+import { skillsData } from './skills';
 
 export const translations = {
   fr: {
+    // --- IMPORTATIONS DYNAMIQUES ---
     projects: {
         title: "Projets Réalisés",
         ...projectsData.fr
     },
+    experience: experienceData.fr,
+    skills: skillsData.fr,
 
+    // --- TEXTES STATIQUES ---
     nav: {
       home: 'Accueil',
       about: 'À propos',
       skills: 'Compétences',
-      projects: 'Projets',
       experience: 'Expériences',
       education: 'Formations',
       distinctions: 'Distinctions',
-      contact: 'Contacts', // <--- "s" AJOUTÉ ICI
+      projects: 'Projets',
+      contact: 'Contacts',
       role: 'Ingénieur Aéro'
     },
     hero: {
@@ -37,28 +43,6 @@ export const translations = {
       p5: "Mon ambition est claire : contribuer à la recherche et à l’innovation pour rendre l’aéronautique et le spatial toujours plus efficients, plus responsables, et pour rendre le transport aérien plus sûr.",
       p6: "Je crois profondément que le progrès n’est jamais une aventure solitaire. C’est dans la coopération, la synergie des talents et la curiosité partagée que naissent les vraies révolutions techniques. C’est cette conviction qui guide mon parcours, et qui nourrit ma détermination à évoluer dans ce secteur stratégique du développement mondial.",
       p7: "Toujours animé par cette passion, je reste ouvert à toute discussion, collaboration ou échange d’idées autour de ce domaine qui me fascine tant. Partager, apprendre et construire ensemble sont pour moi les véritables moteurs du progrès car chaque rencontre peut être le point de départ d’une innovation qui transforme le ciel."
-    },
-    skills: {
-      title: "Arsenal Technique",
-      cat1: "Conception & Ingénierie",
-      tag1: "Cœur de métier",
-      cat2: "Programmation & Outils",
-      tag2: "Compétences Transverses",
-      cat3: "Sécurité & Système"
-    },
-    experience: {
-      title: "Expériences",
-      exp1: {
-        role: "Recherche de Stage Ouvrier",
-        company: "Secteur Aéronautique / Industriel • Bordeaux",
-        period: "Actuel",
-        desc: "Démarche active pour intégrer une chaîne de production ou un bureau d'études. Objectif : Appliquer mes connaissances en matériaux et processus industriels."
-      },
-      exp2: {
-        role: "Projet Universitaire Robotique",
-        company: "2024 • Travail d'équipe",
-        desc: "Conception et programmation d'un micro-contrôleur pour un système automatisé. Gestion des capteurs et actionneurs."
-      }
     },
     education: {
       title: "Formations",
@@ -95,20 +79,24 @@ export const translations = {
   },
 
   en: {
+    // --- 1. DYNAMIC DATA (Imports EN) ---
     projects: {
         title: "Featured Projects",
         ...projectsData.en
     },
+    experience: experienceData.en,
+    skills: skillsData.en,
 
+    // --- 2. STATIC TEXTS (EN) ---
     nav: {
       home: 'Home',
       about: 'About',
       skills: 'Skills',
-      projects: 'Projects',
       experience: 'Experience',
       education: 'Education',
       distinctions: 'Awards',
-      contact: 'Contacts', // <--- "s" AJOUTÉ ICI
+      projects: 'Projects',
+      contact: 'Contacts',
       role: 'Aero Engineer'
     },
     hero: {
@@ -130,28 +118,6 @@ export const translations = {
       p5: "My ambition is clear: to contribute to research and innovation to make aeronautics and space ever more efficient, more responsible, and to make air transport safer.",
       p6: "I deeply believe that progress is never a solitary adventure. It is in cooperation, the synergy of talents, and shared curiosity that true technical revolutions are born. It is this conviction that guides my path, and feeds my determination to evolve in this strategic sector of global development.",
       p7: "Still driven by this passion, I remain open to any discussion, collaboration, or exchange of ideas around this field that fascinates me so much. Sharing, learning, and building together are for me the true engines of progress because every encounter can be the starting point of an innovation that transforms the sky."
-    },
-    skills: {
-      title: "Technical Arsenal",
-      cat1: "Design & Engineering",
-      tag1: "Core Focus",
-      cat2: "Programming & Tools",
-      tag2: "Cross-functional Skills",
-      cat3: "Security & Systems"
-    },
-    experience: {
-      title: "Experience",
-      exp1: {
-        role: "Seeking Industrial Internship",
-        company: "Aerospace / Industrial Sector • Bordeaux",
-        period: "Current",
-        desc: "Active approach to join a production line or a design office. Objective: Apply my knowledge in materials and industrial processes."
-      },
-      exp2: {
-        role: "University Robotics Project",
-        company: "2024 • Teamwork",
-        desc: "Design and programming of a microcontroller for an automated system. Management of sensors and actuators."
-      }
     },
     education: {
       title: "Education",
