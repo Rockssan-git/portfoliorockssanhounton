@@ -57,7 +57,7 @@ export const projectsData = {
     },
     p3: {
       id: "p3",
-      title: "CyberSpace Defender",
+      title: "CyberSpace : Neon Arcade",
       subtitle: "Jeu de Tir Arcade 2D (Shoot'em Up)",
       date: "développé en déc. 2025",
       desc: "Conçu comme une exploration technique du développement vidéoludique moderne, CyberSpace Defender est un jeu de tir arcade (Shoot'em Up) développé sous Unity. Ce projet matérialise la rencontre entre l'esthétique rétro du Pixel Art et une logique de programmation rigoureuse en C#. En mettant l'accent sur l'expérience utilisateur (Game Feel) et l'algorithmique comportementale, l'application propose une boucle de gameplay dynamique où la gestion de la difficulté est indexée sur la performance du joueur. Plus qu'un simple jeu, c'est une démonstration de compétences en architecture logicielle orientée composants et en gestion de systèmes interactifs temps réel.",
@@ -142,7 +142,7 @@ export const projectsData = {
     },
     p3: {
       id: "p3",
-      title: "CyberSpace Defender",
+      title: "CyberSpace : Neon Arcade",
       subtitle: "2D Arcade Shooter (Shoot'em Up)",
       date: "developed in Dec. 2025",
       desc: "Designed as a technical exploration of modern game development, CyberSpace Defender is a Shoot'em Up developed in Unity. This project bridges retro Pixel Art aesthetics with rigorous C# programming logic. By emphasizing user experience (Game Feel) and behavioral algorithms, the application offers a dynamic gameplay loop where difficulty scales based on player performance. More than just a game, it is a demonstration of skills in component-oriented software architecture and real-time interactive system management.",

@@ -22,7 +22,7 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', newTheme);
   };
 
-  // NOUVEL ORDRE DES ONGLETS
+  // ORDRE DES ONGLETS
   const tabs = [
     { name: t.nav.home, href: '/' },
     { name: t.nav.about, href: '/about' },
@@ -30,7 +30,6 @@ export default function Navbar() {
     { name: t.nav.experience, href: '/experience' },
     { name: t.nav.education, href: '/education' },
     { name: t.nav.distinctions, href: '/distinctions' },
-    // "Projets" a été déplacé ICI (après Distinctions)
     { name: t.nav.projects, href: '/projects' },
     { name: t.nav.contact, href: '/contact' },
   ];
@@ -54,17 +53,28 @@ export default function Navbar() {
            </div>
         </Link>
 
-        {/* CONTROLES (THEME + LANGUE) */}
-        <div className="flex items-center gap-4">
+        {/* CONTROLES (THEME + CV + LANGUE) */}
+        <div className="flex items-center gap-3">
             
             {/* 1. BOUTON THEME (Lune/Soleil) */}
-            <button onClick={toggleTheme} className="relative w-14 h-7 rounded-full bg-[var(--toggle-bg)] border border-[var(--toggle-border)] flex items-center justify-between px-1 transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,204,255,0.2)]">
+            <button onClick={toggleTheme} className="relative w-14 h-7 rounded-full bg-[var(--toggle-bg)] border border-[var(--toggle-border)] flex items-center justify-between px-1 transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,204,255,0.2)] mr-2">
                 <svg className={`w-3.5 h-3.5 z-10 transition-colors duration-300 ${theme === 'light' ? 'text-black' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                 <svg className={`w-3.5 h-3.5 z-10 transition-colors duration-300 ${theme === 'dark' ? 'text-black' : 'text-slate-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                 <span className={`absolute top-0.5 w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${theme === 'dark' ? 'translate-x-7' : 'translate-x-0'}`}></span>
             </button>
 
-            {/* 2. BOUTON LANGUE (FR/AN) */}
+            {/* 2. BOUTON CV (NOUVEAU) */}
+            <a 
+                href="https://cvdesignr.com/p/66faf1db57f46?hl=fr_FR" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 flex items-center justify-center rounded-lg bg-[var(--toggle-bg)] border border-[var(--toggle-border)] text-[var(--text-secondary)] font-bold text-xs hover:border-[#00CCFF] hover:text-[#00CCFF] transition-all duration-300 shadow-sm"
+                title="Voir mon CV"
+            >
+                CV
+            </a>
+
+            {/* 3. BOUTON LANGUE (FR/AN) */}
             <button 
                 onClick={toggleLanguage}
                 className="w-9 h-9 flex items-center justify-center rounded-lg bg-[var(--toggle-bg)] border border-[var(--toggle-border)] text-[var(--text-secondary)] font-bold text-xs hover:border-[#00CCFF] hover:text-[#00CCFF] transition-all duration-300 shadow-sm"
@@ -87,8 +97,8 @@ export default function Navbar() {
                 className="relative group py-3"
               >
                 <span className={`text-sm font-medium transition-all duration-300 ${
-                    isActive ? 'text-[#00CCFF]' : 'text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]'
-                  }`}>
+                  isActive ? 'text-[#00CCFF]' : 'text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]'
+                }`}>
                   {tab.name}
                 </span>
                 {isActive && (
