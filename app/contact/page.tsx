@@ -9,14 +9,10 @@ export default function ContactPage() {
     <PageLayout>
         <Navbar />
         
-        {/* J'ai changé 'grid' par 'flex' pour centrer le contenu */}
-        <div className="max-w-[1300px] mx-auto px-6 pt-40 pb-20 w-full min-h-screen flex flex-col items-center">
+        {/* MODIFICATION ICI : J'ai changé pt-40 en pt-28 et ajouté justify-start */}
+        <div className="max-w-[1300px] mx-auto px-6 pt-28 pb-20 w-full min-h-screen flex flex-col items-center justify-start">
             
-            {/* J'ai supprimé tout le bloc "Colonne Gauche" (Localisation/Email) */}
-            
-            {/* Colonne Droite (Formulaire) : Maintenant centrée et seule */}
-            <div className="w-full max-w-2xl">
-                {/* J'ai enlevé la classe 'spotlight-card' ici car le style est déjà géré DANS le composant Contact */}
+            <div className="w-full max-w-2xl mt-8">
                 <Contact />
             </div>
 
