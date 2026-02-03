@@ -8,7 +8,8 @@ export default function Projects() {
   const projectImages = {
     p1: "/images/projects/p1.png",
     p2: "/images/projects/p2.png",
-    p3: "/images/projects/p3.png"
+    p3: "/images/projects/p3.png",
+    p4: "/images/projects/p4.png" // Assure-toi d'avoir une image pour ce projet, sinon p1.png sera utilisé par défaut
   };
 
   const renderStackItem = (item) => {
@@ -23,7 +24,10 @@ export default function Projects() {
     return item;
   };
 
+  // --- MODIFICATION ICI : AJOUT DE P4 EN PREMIER ---
+  // Ordre : Eun-Woo (2026) -> District (2025) -> CyberSpace (2025) -> Assistant (2025)
   const projectsList = t.projects ? [
+    t.projects.p4,
     t.projects.p1,
     t.projects.p3,
     t.projects.p2
@@ -35,6 +39,7 @@ export default function Projects() {
        <div className="grid grid-cols-1 gap-12">
 
           {projectsList.map((project) => {
+            // Seul p1 (District Zone 25) clignotera car c'est le projet "En cours" (tu peux changer ça sur p4 si tu veux)
             const isProjectActive = project.id === 'p1';
             const imageSrc = (project.id && projectImages[project.id]) || "/images/projects/p1.png";
 
@@ -77,9 +82,9 @@ export default function Projects() {
                       </div>
                   </div>
 
-                  <p className="text-[var(--text-secondary)] leading-relaxed text-justify mb-8">
+                  <div className="text-[var(--text-secondary)] leading-relaxed text-justify mb-8 project-desc-link">
                       {project.desc}
-                  </p>
+                  </div>
 
                   <div className="grid md:grid-cols-2 gap-8 mb-8">
                       <div>
