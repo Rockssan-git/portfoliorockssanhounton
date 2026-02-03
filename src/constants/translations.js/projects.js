@@ -67,7 +67,6 @@ export const projectsData = {
       date: "développé en déc. 2025",
       desc: (
         <span>
-          {/* MODIFICATION ICI : Ajout de " 2025" après le lien */}
           CyberSpace Neon Arcade 0.2 a été développé dans le cadre de la <a href="https://codegamejam.extragames.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Code Game Jam</a> 2025. Conçu comme une exploration technique du développement vidéoludique moderne, CyberSpace Defender est un jeu de tir arcade (Shoot'em Up) développé sous Unity. Ce projet matérialise la rencontre entre l'esthétique rétro du Pixel Art et une logique de programmation rigoureuse en C#. En mettant l'accent sur l'expérience utilisateur (Game Feel) et l'algorithmique comportementale, l'application propose une boucle de gameplay dynamique où la gestion de la difficulté est indexée sur la performance du joueur. Plus qu'un simple jeu, c'est une démonstration de compétences en architecture logicielle orientée composants et en gestion de systèmes interactifs temps réel.
         </span>
       ),
@@ -89,7 +88,8 @@ export const projectsData = {
           "Cycle de Jeu Complet (Menu, Pause, GameOver)"
       ],
       btnDemo: "Jouer sur Itch.io",
-      linkDemo: "https://rockssan.itch.io/cyberspace",
+      // MODIFICATION ICI : Nouveau lien mis à jour
+      linkDemo: "https://rockssan-hounton.itch.io/cyberspace-neon-arcade-02",
       btnRepo: "Accéder au code source"
     },
     p2: {
@@ -99,7 +99,6 @@ export const projectsData = {
       date: "développé en déc. 2025",
       desc: (
         <span>
-          {/* MODIFICATION ICI : Remplacement de "défi NDI 2025" par le lien "Nuit de l'Info" + " 2025" */}
           Développé dans le cadre de la <a href="https://www.nuitdelinfo.com/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Nuit de l'Info</a> 2025, cet assistant intelligent a pour vocation de simplifier et démocratiser l'accès à l'information administrative. Grâce à l'intégration de Gemini AI pour vulgariser les démarches et une conception technique inclusive (bilingue FR/AR, mode hors-ligne), il offre une ressource précieuse et accessible à tous les usagers, même en zones à faible connectivité.
         </span>
       ),
@@ -128,6 +127,6 @@ export const projectsData = {
     }
   },
   en: {
-    // Version anglaise inchangée pour l'instant
+    // Version anglaise inchangée
   }
 };
