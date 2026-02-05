@@ -88,7 +88,6 @@ export const projectsData = {
           "Cycle de Jeu Complet (Menu, Pause, GameOver)"
       ],
       btnDemo: "Jouer sur Itch.io",
-      // MODIFICATION ICI : Nouveau lien mis à jour
       linkDemo: "https://rockssan-hounton.itch.io/cyberspace-neon-arcade-02",
       btnRepo: "Accéder au code source"
     },
@@ -126,7 +125,132 @@ export const projectsData = {
       btnRepo: "Accéder au dépôt Github"
     }
   },
+
+  // ---------------------------------------------------------
+  // VERSION ANGLAISE (Complète et traduite)
+  // ---------------------------------------------------------
   en: {
-    // Version anglaise inchangée
+    p4: {
+      id: "p4",
+      title: "Il s'appelait Eun-Woo",
+      subtitle: "Video Game / Narrative Adventure",
+      date: "developed from Jan. 29 to Feb. 1, 2026",
+      desc: (
+        <span>
+          This video game was created as part of the <a href="https://globalgamejam.org/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Global Game Jam</a> 2026. "Il s'appelait Eun-Woo" is a narrative experience developed in Unity. Resulting from a collaboration within a team of professional developers, this project explores immersive mechanics and polished storytelling.
+        </span>
+      ),
+      stackTitle: "Tech Stack",
+      stack: [
+        "Engine: Unity 6",
+        "Language: C# (Object-Oriented Scripting)",
+        "Team: Collaboration with professional developers",
+        "Management: Git & GitHub for versioning"
+      ],
+      featTitle: "Key Features",
+      features: [
+          "Immersive narration",
+          "Narrative gameplay",
+          "Dedicated atmospheric sound",
+          "Original art direction"
+      ],
+      btnDemo: "Play",
+      linkDemo: "https://globalgamejam.org/games/2026/il-sappelait-eun-woo-7",
+      btnRepo: "Request Code Access"
+    },
+    p1: {
+      id: "p1",
+      title: "District Zone 25",
+      subtitle: "Community Platform",
+      date: "in development since Dec. 2025",
+      desc: (
+        <span>
+          Born from the creative effervescence of the <a href="https://www.nuitdelinfo.com/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Nuit de l'Info</a> 2025, District Zone 25 is an interactive community platform designed to break silos between the general public and technology experts. Developed with React, this application becomes an innovation hub where students, professionals, and passionate neophytes converge. By facilitating the sharing of innovative projects and idea exchange, District Zone 25 acts as a catalyst for opportunities and strategic partnerships for tomorrow's IT actors.
+        </span>
+      ),
+      stackTitle: "Tech Stack",
+      stack: [
+        "Front-end: React.js (Hooks, Router), JavaScript (ES6+), CSS3",
+        "Back-end: Supabase (Secure Auth & Real-time Database)",
+        "AI: Google Gemini AI, integrated as a 'cognitive brain' for real-time assistance",
+        "Architecture & Design: Modular Component-Based & Responsive Design",
+        "Dev Ecosystem: VS Code, Git and GitHub",
+        "Deployment: Vercel (CI/CD)"
+      ],
+      featTitle: "Key Features",
+      features: [
+          "Integrated AI Assistant",
+          "Real-time Community Space",
+          "Robust Architecture (Supabase)",
+          "Fluid & Responsive Experience"
+      ],
+      btnDemo: "Access Platform",
+      linkDemo: "https://rocks-project-frontend.vercel.app",
+      btnRepo: "Request Code Access"
+    },
+    p3: {
+      id: "p3",
+      title: "CyberSpace Neon Arcade 0.2",
+      subtitle: "2D Arcade Shooter (Shoot'em Up)",
+      date: "developed in Dec. 2025",
+      desc: (
+        <span>
+          CyberSpace Neon Arcade 0.2 was developed as part of the <a href="https://codegamejam.extragames.fr/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Code Game Jam</a> 2025. Designed as a technical exploration of modern game development, this Shoot'em Up developed in Unity bridges retro Pixel Art aesthetics with rigorous C# programming logic. By emphasizing user experience (Game Feel) and behavioral algorithms, the application offers a dynamic gameplay loop where difficulty scales based on player performance. More than just a game, it is a demonstration of skills in component-oriented software architecture and real-time interactive system management.
+        </span>
+      ),
+      stackTitle: "Tech Stack",
+      stack: [
+        "Engine & Language: Unity 6 (LTS), C# (OOP Scripting & MonoBehavior)",
+        "Logical Architecture: Component-Based Modular System, State Manager (GameManager), Coroutines",
+        "Core Gameplay: Procedural Spawning Algorithms (Weighted enemy generation), Conditional Combo Logic",
+        "UI/UX: Unity UI, TextMeshPro, Canvas Scaler (Responsive Design 1920x1080), Dynamic Anchoring",
+        "Physics: Rigidbody2D, BoxCollider2D, Trigger Management",
+        "Deployment: Windows Standalone Build (.exe), Itch.io Distribution"
+      ],
+      featTitle: "Key Features",
+      features: [
+          "Evolving Rank System (Junior to Legend)",
+          "Tactical Combo Mechanic (Risk vs Reward)",
+          "Procedural Threat & Bonus Management",
+          "Audio-Visual Architecture (Parallax Scrolling)",
+          "Complete Game Cycle (Menu, Pause, GameOver)"
+      ],
+      btnDemo: "Play on Itch.io",
+      linkDemo: "https://rockssan-hounton.itch.io/cyberspace-neon-arcade-02",
+      btnRepo: "Request Code Access"
+    },
+    p2: {
+      id: "p2",
+      title: "Public Services Assistant",
+      subtitle: "Intelligent Administrative Guide",
+      date: "developed in Dec. 2025",
+      desc: (
+        <span>
+          Developed as part of the <a href="https://www.nuitdelinfo.com/" target="_blank" rel="noopener noreferrer" className="text-[#00CCFF] hover:underline">Nuit de l'Info</a> 2025, this smart assistant aims to simplify and democratize access to administrative information. Thanks to Gemini AI integration for explaining complex procedures and an inclusive technical design (bilingual FR/AR, offline mode), it provides a valuable and accessible resource for all users, even in areas with limited connectivity.
+        </span>
+      ),
+      stackTitle: "Tech Stack",
+      stack: [
+        "Front-end: React.js (Lightweight architecture for fast loading)",
+        "AI: Gemini AI (Optimized for structured and concise responses)",
+        "Accessibility: i18next (Dynamic bilingual support French / Arabic)",
+        "Offline Mode & Performance: Browser Cache and Web Storage API",
+        "Design & UI: Tailwind CSS (Clean, fast, and 100% responsive interface)",
+        "Dev Ecosystem: VS Code, Git and GitHub",
+        "Hosting: Vercel"
+      ],
+      featTitle: "Key Features",
+      features: [
+          "Intelligent Administrative Guide (Gemini AI)",
+          "Hybrid Online/Offline Mode",
+          "Native Bilingual Interface (FR/AR) with RTL support",
+          "Low-Bandwidth Design",
+          "Categorized Orientation Engine",
+          "Universal Accessibility"
+      ],
+      btnDemo: "Access Assistant",
+      linkDemo: "https://nuit-info-assist.vercel.app",
+      btnRepo: "Request Code Access"
+    }
   }
 };
