@@ -2,7 +2,7 @@
 import PageLayout from '../../src/components/PageLayout';
 import Navbar from '../../src/components/Navbar';
 import Footer from '../../src/components/Footer';
-import Achievements from '../../src/components/Achievements';
+import Achievements from '../../src/components/Distinctions';
 
 export default function DistinctionsPage() {
   return (
