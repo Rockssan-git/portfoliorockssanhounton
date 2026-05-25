@@ -65,7 +65,7 @@ export default function Navbar() {
 
             {/* 2. BOUTON CV (NOUVEAU) */}
             <a 
-                href="https://cvdesignr.com/p/66faf1db57f46?hl=fr_FR" 
+                href="https://cvdesignr.com/p/lkoXEmbPO1Mza39?hl=fr_FR" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center rounded-lg bg-[var(--toggle-bg)] border border-[var(--toggle-border)] text-[var(--text-secondary)] font-bold text-xs hover:border-[#00CCFF] hover:text-[#00CCFF] transition-all duration-300 shadow-sm"
